@@ -1,0 +1,10 @@
+/spacecraft/technology/images/sts_spec_6-small.gif
+/
+/ksc.html
+/history/apollo/
+/spacecraft/missions/sts-73/sts-73-patch-small.gif
+/spacecraft/missions/sts-73/mission-sts-73.html
+/spacecraft/time/
+/history/mercury/mercury.html
+/spacecraft/time/liftoff.html
+/spacecraft
