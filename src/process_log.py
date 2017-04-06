@@ -3,6 +3,9 @@ import sys
 from datetime import datetime
 from collections import defaultdict
 
+# Function to identify the top 10 active addresses
+# Using a hash map, the count of the number of times a given IP occurs in the input file is maintained
+# The hash map is then sorted and the top ten counts are returned
 def top_active_addresses(logs, hosts_file):
 	address_count = dict()
 
@@ -17,6 +20,9 @@ def top_active_addresses(logs, hosts_file):
 		for x in top_10:
 			hosts.write("{0},{1}\n".format(*x))
 
+# Function to identify the top 10 resources that consumed the most bandwidth
+# Using hash map, the amount of bandwidth used by a resource is maintained
+# The top ten resources are returned after sorting the hash map
 def bw_intensive_resources(logs, resources_file):
 	resources = dict()
 
@@ -38,6 +44,7 @@ def bw_intensive_resources(logs, resources_file):
 		for x in top_10:
 			f.write(x[0]+'\n')
 
+# Helper function to calculate if two timestamps are within an hour of each other
 def within_an_hour(time1, time2):
 	diff = (time2 - time1).total_seconds()
 	if diff < 3600:
@@ -45,6 +52,9 @@ def within_an_hour(time1, time2):
 	else:
 		return False
 
+# Function to identify the 10 busiest 60 minute windows
+# Two pointers to the input file are maintained. At any given moment, the logs between the start and the end 
+#      pointers lie within a 60 minute window. When the next entry does not lie in this window, the pointer are incremented accordingly
 def busiest_windows(logs, hours_file):
 	timestamps = dict()
 	fmt = '%d/%b/%Y:%H:%M:%S'
@@ -93,6 +103,7 @@ def busiest_windows(logs, hours_file):
 		for x in top_10:
 			hours.write("{0},{1}\n".format(*x))
 
+# Function to detemine logs that need to be blocked
 def failed_login_attempts(parsed_data, raw_data, blocked_file):
 	ip_to_block = defaultdict(dict)
 	fmt = '%d/%b/%Y:%H:%M:%S'

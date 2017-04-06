@@ -1,3 +1,5 @@
+NOTE - I haven't included the log_input/log.txt file, since it was too large and couldn't be uploaded to Github
+
 # Table of Contents
 1. [Challenge Summary](README.md#challenge-summary)
 2. [Details of Implementation](README.md#details-of-implementation)

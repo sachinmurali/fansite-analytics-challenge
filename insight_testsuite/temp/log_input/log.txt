@@ -1,10 +1,10 @@
-199.120.110.21 - - [01/Jul/1995:00:00:01 -0400] "GET /history/apollo/ HTTP/1.0" 200 4255
-unicomp6.unicomp.net - - [01/Jul/1995:00:20:00 -0400] "GET /spacecraft/time/ HTTP/1.0" 401 3985
-210.238.40.43 - - [01/Jul/1995:00:25:22 -0400] "POST / HTTP/1.0" 401 7077
-207.237.55.38 - - [01/Jul/1995:00:27:23 -0400] "GET /history/mercury/mercury.html HTTP/1.0" 200 1871
-219.156.97.22 - - [01/Jul/1995:00:58:31 -0400] "GET /spacecraft/technology/images/sts_spec_6-small.gif HTTP/1.0" 200 53145
+199.120.110.21 - - [01/Jul/1995:00:00:01 -0400] "GET /history/apollo/ HTTP/1.0" 401 4255
+unicomp6.unicomp.net - - [01/Jul/1995:00:00:10 -0400] "GET /spacecraft/time/ HTTP/1.0" 401 3985
+199.120.110.21 - - [01/Jul/1995:00:00:17 -0400] "POST / HTTP/1.0" 401 7077
+199.120.110.21 - - [01/Jul/1995:00:00:18 -0400] "GET /history/mercury/mercury.html HTTP/1.0" 401 1871
+199.120.110.21 - - [01/Jul/1995:00:03:31 -0400] "GET /spacecraft/technology/images/sts_spec_6-small.gif HTTP/1.0" 200 53145
 xrf.koo.univie.ac.at - - [01/Jul/1995:01:05:00 -0400] "GET /ksc.html HTTP/1.0" 200 7071
-199.72.81.55 - - [01/Jul/1995:03:04:20 -0400] "POST /spacecraft/missions/sts-73/mission-sts-73.html HTTP/1.0" 401 4085
-burger.letters.com - - [01/Jul/1995:03:54:24 -0400] "POST /spacecraft/time/liftoff.html HTTP/1.0" 304 0
-199.120.110.21 - - [01/Jul/1995:05:12:36 -0400] "GET /spacecraft/missions/sts-73/sts-73-patch-small.gif HTTP/1.0" 200 4179
-210.279.72.52 - - [01/Jul/1995:07:11:24 -0400] "POST /spacecraft HTTP/1.0" 200 
+199.120.110.21 - - [01/Jul/1995:03:04:20 -0400] "POST /spacecraft/missions/sts-73/mission-sts-73.html HTTP/1.0" 304 4085
+burger.letters.com - - [01/Jul/1995:03:10:24 -0400] "POST /spacecraft/time/liftoff.html HTTP/1.0" 304 0
+burger.letters.com - - [01/Jul/1995:05:12:36 -0400] "GET /spacecraft/missions/sts-73/sts-73-patch-small.gif HTTP/1.0" 200 4179
+burger.letters.com - - [01/Jul/1995:07:14:24 -0400] "POST /spacecraft HTTP/1.0" 200 

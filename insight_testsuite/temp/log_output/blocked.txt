@@ -1,0 +1,1 @@
+199.120.110.21 - - [01/Jul/1995:00:03:31 -0400] "GET /spacecraft/technology/images/sts_spec_6-small.gif HTTP/1.0" 200 53145

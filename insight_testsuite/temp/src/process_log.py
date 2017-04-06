@@ -39,10 +39,11 @@ def bw_intensive_resources(logs, resources_file):
 			f.write(x[0]+'\n')
 
 def within_an_hour(time1, time2):
-	if (time2 - time1).total_seconds() > 3600:
-		return False
-	else:
+	diff = (time2 - time1).total_seconds()
+	if diff < 3600:
 		return True
+	else:
+		return False
 
 def busiest_windows(logs, hours_file):
 	timestamps = dict()
@@ -52,30 +53,39 @@ def busiest_windows(logs, hours_file):
 	start = 0
 	end = 0
 
-	while end < len(logs) - 1 and start < len(logs) - 1:
+	while end < len(logs) - 1  and start < len(logs) - 1 :
 		start_time = datetime.strptime(logs[start].split()[0], fmt)
 		end_time = datetime.strptime(logs[end].split()[0], fmt)
 
 		if within_an_hour(start_time, end_time):
 			count += 1
 			end += 1
+
 		else:
 			count -= 1
 			if logs[start] in timestamps:
-				timestamps[logs[start]] = max(timestamps[logs[start]], count)
+				timestamps[logs[start]] = max(timestamps[logs[start]], count) 
 			else:
-				timestamps[logs[start]] = count
+				timestamps[logs[start]] = count 
 			start += 1
 
 	while start <= end:
+		start_time = datetime.strptime(logs[start].split()[0], fmt)
+		end_time = datetime.strptime(logs[end].split()[0], fmt)
+	
 		if within_an_hour(start_time, end_time):
 			if logs[start] in timestamps:
-				timestamps[logs[start]] = max(timestamps[logs[start]], count)
+				timestamps[logs[start]] = max(timestamps[logs[start]], count) 
 			else:
 				timestamps[logs[start]] = count
 			count -= 1
-			start += 1
-
+		else:
+			count -= 1
+			if logs[start] in timestamps:
+				timestamps[logs[start]] = max(timestamps[logs[start]], count) 
+			else:
+				timestamps[logs[start]] = count
+		start += 1
 
 	top_10 = sorted(timestamps.iteritems(), key=lambda x:-x[1])[:10]
 
@@ -112,6 +122,7 @@ def failed_login_attempts(parsed_data, raw_data, blocked_file):
 				delta = (login_timestamp - ip_to_block[ip]['timestamp']).total_seconds()
 
 				if ip_to_block[ip]['count'] == 3:
+					
 					if delta <= 300:
 						with open(blocked_file, 'a') as f:
 							f.write(raw_data[log])
